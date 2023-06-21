@@ -41,7 +41,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void swap(stack_t **stack, unsigned int ln_nmbr);
-int tokenize(char *str, char *delimiter);
+char *tokenize(char *str, char *delimiter);
 void push(stack_t **stack, unsigned int line_number);
 
 /**ERROR**/

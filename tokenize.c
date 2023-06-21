@@ -6,7 +6,7 @@
  * @delimiter: delimiter
  * Return: number of tokens
  */
-int tokenize(char *str, char *delimiter)
+char *tokenize(char *str, char *delimiter)
 {   
     int c_token = 0;
     char *token;
@@ -18,5 +18,5 @@ int tokenize(char *str, char *delimiter)
         c_token++;
         token = strtok(NULL, delimiter);
     }
-    return (c_token);
+    return (token);
 }

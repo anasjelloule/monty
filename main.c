@@ -14,6 +14,9 @@ int main(int argc, char *argv[])
 	char *ln = NULL;
 	instruction_t *instruction = NULL;
 	size_t glsize = 0;
+	char *token;
+	int c_token = 0;
+	
 
 	err_num_arg(argc, argv[1]);
 	err_file(fl, argv[1]);
@@ -22,7 +25,12 @@ int main(int argc, char *argv[])
 	
 	while (getline(&ln, &glsize, fl) != -1)
 	{
-		tokenize(ln, " \n\t");
+		token = strtok(ln, " \n\t");
+		while (token != NULL)
+		{
+			printf("%s\n", token);
+			token = strtok(NULL, " \n\t");
+		}
 		
 	}
 	if (ln)
