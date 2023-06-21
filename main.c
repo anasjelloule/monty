@@ -26,11 +26,11 @@ int main(int argc, char *argv[])
 	
 	while (getline(&ln, &glsize, fl) != -1)
 	{
-		token = strtok(ln, " \n\t");
+		token = strtok(ln, " ");
 		while (token != NULL)
 		{
 			printf("%s", token);
-			token = strtok(NULL, " \n\t");
+			token = strtok(NULL, " ");
 		}
 	}
 	free(ln);
