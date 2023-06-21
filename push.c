@@ -2,18 +2,18 @@
 
 /**
  * push -> push int into list
- * @h: list
- * @n: data
- * Return: adress of new element
+ * @stack: list
+ * @line_number: data
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-    int n;
-    char arg;
+    stack_t *new = malloc(sizeof(stack_t));
 
-    if (*stack == NULL || (*stack)->next == NULL)
+    if (*stack == NULL)
     {
+        new->next == NULL;
         return;
     }
+
     
 }
