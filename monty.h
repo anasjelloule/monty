@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <fcntl.h>
 #include <ctype.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -41,7 +42,7 @@ typedef struct instruction_s
 
 void swap(stack_t **stack, unsigned int ln_nmbr);
 int tokenize(char *str, char *delimiter);
-instruction_t *push(stack_t **stack, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number);
 
 /**ERROR**/
 void err_num_arg(int argc, char argv[]);

@@ -6,14 +6,14 @@
  * @n: data
  * Return: adress of new element
  */
-instruction_t *push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
     int n;
-    char arg = 
+    char arg;
 
     if (*stack == NULL || (*stack)->next == NULL)
     {
-        return (NULL);
+        return;
     }
     
 }

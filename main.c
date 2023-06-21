@@ -19,10 +19,11 @@ int main(int argc, char *argv[])
 	err_file(fl, argv[1]);
 	lst = malloc(sizeof(stack_t));
 	if_list_null(lst);
-
+	
 	while (getline(&ln, &glsize, fl) != -1)
 	{
-		ln_nmbr++;
+		tokenize(ln, " \n\t");
+		
 	}
 	if (ln)
 		free(ln);

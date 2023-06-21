@@ -7,7 +7,7 @@
  * Return: number of tokens
  */
 int tokenize(char *str, char *delimiter)
-{
+{   
     int c_token = 0;
     char *token;
     if (str == NULL)
