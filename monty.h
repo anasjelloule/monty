@@ -25,7 +25,6 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -41,6 +40,12 @@ typedef struct instruction_s
 } instruction_t;
 
 void swap(stack_t **stack, unsigned int ln_nmbr);
+int tokenize(char *str, char *delimiter);
+instruction_t *push(stack_t **stack, unsigned int line_number);
 
+/**ERROR**/
+void err_num_arg(int argc, char argv[]);
+void err_file(FILE *file, char *argv);
+void if_list_null(stack_t *list);
 
 #endif
