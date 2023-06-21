@@ -39,7 +39,10 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/**GLOBALE VAR**/
+extern stack_t *lst;
 
+/***************/
 void swap(stack_t **stack, unsigned int ln_nmbr);
 char *tokenize(char *str, char *delimiter);
 void push(stack_t **stack, unsigned int line_number);

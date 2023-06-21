@@ -1,5 +1,6 @@
 #include "monty.h"
 
+stack_t *lst;
 /**
  * main -> monty
  * @argc: num of arguments
@@ -9,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 	FILE *fl = fopen(argv[1], "r");
-	stack_t *lst;
+	
 	unsigned int ln_nmbr = 0;
 	char *ln = NULL;
 	instruction_t *instruction = NULL;
@@ -28,13 +29,14 @@ int main(int argc, char *argv[])
 		token = strtok(ln, " \n\t");
 		while (token != NULL)
 		{
-			printf("%s\n", token);
+			printf("%s", token);
 			token = strtok(NULL, " \n\t");
 		}
-		
 	}
-	if (ln)
-		free(ln);
+	free(ln);
+	if (lst != NULL)
+		free(lst);
+	
 
 	fclose(fl);
 	return (0);
