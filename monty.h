@@ -58,7 +58,7 @@ typedef struct global
 extern global glb;
 /***************/
 char *tokenize(char *str, char *delimiter);
-void *check_valid_opcode(stack_t *list);
+void check_valid_opcode(stack_t *list);
 /******************/
 void swap(stack_t **stack, unsigned int ln_nmbr);
 void push(stack_t **stack, unsigned int line_number);
