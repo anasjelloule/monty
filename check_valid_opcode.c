@@ -9,8 +9,7 @@ void *check_valid_opcode(stack_t *list)
     instruction_t cmd[] = {
         {"push", push},
         {"pall", pall},
-        {NULL, NULL}
-
+        {"swap", swap},
     };
     int i = 0;
     char *token;

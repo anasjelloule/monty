@@ -1,9 +1,9 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-// #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -40,7 +40,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**GLOBALE VAR**/
-// extern stack_t *lst;
+
 /**
  * struct global - global variable
  * @file: file opened
