@@ -9,11 +9,6 @@ void push(stack_t **stack, unsigned int line_number)
 {
     stack_t *new = malloc(sizeof(stack_t));
 
-    if (*stack == NULL)
-    {
-        new->next == NULL;
-        return;
-    }
-
-    
+    if_malloc_fail(new);
+    new->n = (*stack)->n;
 }

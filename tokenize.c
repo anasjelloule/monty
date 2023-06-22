@@ -6,17 +6,25 @@
  * @delimiter: delimiter
  * Return: number of tokens
  */
-char *tokenize(char *str, char *delimiter)
-{   
-    int c_token = 0;
+char *tokenize(char *line, char *delimiter)
+{
     char *token;
-    if (str == NULL)
-        return (0);
-    token = strtok(str, delimiter);
+    token = strtok(ln, delimiter);
     while (token != NULL)
     {
-        c_token++;
+        printf("%s", token);
+        if (strcmp(token, "push") == 0)
+        {
+            token = strtok(NULL, delimiter);
+            arg = atoi(token);
+            push(&lst, arg);
+        }
+        else
+        {
+            printf("L<line_number>: unknown instruction <opcode>");
+            exit(EXIT_FAILURE);
+        }
+
         token = strtok(NULL, delimiter);
     }
-    return (token);
 }

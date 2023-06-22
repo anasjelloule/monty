@@ -50,6 +50,6 @@ void push(stack_t **stack, unsigned int line_number);
 /**ERROR**/
 void err_num_arg(int argc, char argv[]);
 void err_file(FILE *file, char *argv);
-void if_list_null(stack_t *list);
+void if_malloc_fail(stack_t *list);
 
 #endif
