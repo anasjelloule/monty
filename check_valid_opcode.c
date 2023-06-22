@@ -14,21 +14,23 @@ void *check_valid_opcode(stack_t *list)
     };
     int i = 0;
     char *token;
+
     token = strtok(glb.line, " ");
     while (token != NULL)
     {
         if (strcmp(token, cmd[i].opcode) == 0)
         {
+            printf("%s\n", token);
             if (strcmp(cmd[i].opcode, "pall") != 0 && strcmp(cmd[i].opcode, "pint") != 0 )
             {
                 token = strtok(NULL, " ");
                 glb.arg = token;
             }
-            cmd[i].f;
+            cmd[i].f(&list, glb.line_num);
         }
         else
         {
-            fprintf(stderr, "L%d: unknown instruction %s\n", glb.line_num, cmd[i].opcode);
+            fprintf(stderr, "L%d: unknown instruction %s i = %d\n", glb.line_num, cmd[i].opcode, i);
             exit(EXIT_FAILURE);
         }
         i++;

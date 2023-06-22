@@ -12,6 +12,7 @@ void err_num_arg(int argc, char argv[])
         fprintf(stderr, "USAGE: monty file\n");
         exit(EXIT_FAILURE);
     }
+    return;
 }
 
 /**
@@ -25,6 +26,7 @@ void err_file(FILE *file, char *argv)
         fprintf(stderr, "Error: Can't open file %s\n", argv);
         exit(EXIT_FAILURE);
     }
+    return;
 }
 
 /**
@@ -38,4 +40,5 @@ void if_malloc_fail(stack_t *list)
         fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
+    return;
 }

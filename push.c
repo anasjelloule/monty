@@ -7,13 +7,16 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
+    int i;
     stack_t *new = malloc(sizeof(stack_t));
-    line_number = glb.line_num;
     if_malloc_fail(new);
-    if (!isdigit(glb.arg) || glb.arg == NULL)
+    for (i = 0; glb.arg[i] < '\0'; i++)
     {
-        fprintf(stderr, "L%d: usage: push integer\n", line_number);
-        exit(EXIT_FAILURE);
+        if (isdigit(glb.arg[i]) == 0 || glb.arg == NULL)
+        {
+            fprintf(stderr, "L%d: usage: push integer\n", line_number);
+            exit(EXIT_FAILURE);
+        }
     }
     new->n = atoi(glb.arg);
     if (*stack == NULL)

@@ -8,7 +8,6 @@
 void pall(stack_t **stack, unsigned int line_number)
 {
     int i;
-    line_number =  glb.line_num;
     if (*stack == NULL)
        return;
     for (i = 0; *stack != NULL; i++)
