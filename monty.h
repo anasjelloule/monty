@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+// #include <unistd.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
@@ -40,12 +40,29 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**GLOBALE VAR**/
-extern stack_t *lst;
-
+// extern stack_t *lst;
+/**
+ * struct global - global variable
+ * @file: file opened
+ * @arg: argument next to the opcode
+ * 
+ * Description: variables
+*/
+typedef struct global
+{
+        char *file;
+        char *arg;
+        char *line;
+        unsigned int line_num;
+}global;
+extern global glb;
 /***************/
-void swap(stack_t **stack, unsigned int ln_nmbr);
 char *tokenize(char *str, char *delimiter);
+void *check_valid_opcode(stack_t *list);
+/******************/
+void swap(stack_t **stack, unsigned int ln_nmbr);
 void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
 
 /**ERROR**/
 void err_num_arg(int argc, char argv[]);
