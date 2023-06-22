@@ -10,6 +10,7 @@ void check_valid_opcode(stack_t *list)
         {"push", push},
         {"pall", pall},
         {"swap", swap},
+	{"pint", pint}
     };
     int i = 0;
     char *token;
@@ -19,7 +20,7 @@ void check_valid_opcode(stack_t *list)
     {
         if (strcmp(token, cmd[i].opcode) == 0)
         {
-            printf("%s\n", token); /*debugging*/
+            printf("%s\n", cmd[i].opcode); /*debugging*/
             if (strcmp(cmd[i].opcode, "pall") != 0 && strcmp(cmd[i].opcode, "pint") != 0)
             {
                 token = strtok(NULL, " ");

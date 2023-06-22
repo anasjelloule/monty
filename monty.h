@@ -62,6 +62,8 @@ void check_valid_opcode(stack_t *list);
 /******************/
 void swap(stack_t **stack, unsigned int ln_nmbr);
 void push(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int ln_nmbr);
 void pall(stack_t **stack, unsigned int line_number);
 
 /**ERROR**/
