@@ -9,6 +9,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
     int i;
     stack_t *new = malloc(sizeof(stack_t));
+    
     if_malloc_fail(new);
     for (i = 0; glb.arg[i] < '\0'; i++)
     {
@@ -22,15 +23,13 @@ void push(stack_t **stack, unsigned int line_number)
     if (*stack == NULL)
     {
         new->next = NULL;
-        new->prev = NULL;
-        return;
     }
     else
     {
-        (*stack)->prev = new;
         new->next = *stack;
-        new->prev = NULL;
+        (*stack)->prev = new;
     }
     *stack = new;
+    printf("add +\n"); /*debugging*/
     return;
 }

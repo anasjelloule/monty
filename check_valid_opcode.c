@@ -11,7 +11,6 @@ void check_valid_opcode(stack_t *list)
         {"pall", pall},
         {"swap", swap},
         {"pint", pint},
-        {NULL, NULL}
     };
     int i;
     char *token;
@@ -20,23 +19,26 @@ void check_valid_opcode(stack_t *list)
     while (token != NULL)
     {
         i = 0;
-        while (i < 3)
+        while (i < 5)
         {
             if (strcmp(token, cmd[i].opcode) == 0)
             {
-                if (strcmp(cmd[i].opcode, "pall") != 0 && strcmp(cmd[i].opcode, "pint") != 0)
+                if (strcmp(cmd[i].opcode, "pall") != 0 || strcmp(cmd[i].opcode, "pint") != 0)
                 {
+                    printf("%s: ",token);
                     token = strtok(NULL, " \n\t");
                     glb.arg = token;
                 }
+                else
+                    strtok(NULL, " \n\t");
                 cmd[i].f(&list, glb.line_num);
                 break;
             }
             i++;
         }
-        if (i == 3)
+        if (i == 5)
         {
-            fprintf(stderr, "L%d: unknown instruction %s\n", glb.line_num, cmd[i].opcode);
+            fprintf(stderr, "L%d: unknown instruction %s\n", glb.line_num, token);
             exit(EXIT_FAILURE);
         }
         token = strtok(NULL, " \n\t");
