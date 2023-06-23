@@ -65,7 +65,6 @@ void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int ln_nmbr);
 void pall(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_num);
 
 /**ERROR**/
 void err_num_arg(int argc, char argv[]);
