@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pint - prints 
+ * pint - prints
  * @stack: stack
  * @line_number: line number
  *

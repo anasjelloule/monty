@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pop - removes 
+ * pop - removes
  * @stack: stack
  * @ln_nmbr: currnt line number
  *
