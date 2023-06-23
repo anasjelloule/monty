@@ -10,31 +10,35 @@ void check_valid_opcode(stack_t *list)
         {"push", push},
         {"pall", pall},
         {"swap", swap},
-	{"pint", pint}
+        {NULL, NULL}
     };
-    int i = 0;
+    int i;
     char *token;
 
-    token = strtok(glb.line, " ");
+    token = strtok(glb.line, " \n\t");
     while (token != NULL)
     {
-        if (strcmp(token, cmd[i].opcode) == 0)
+        i = 0;
+        while (i < 3)
         {
-            printf("%s\n", cmd[i].opcode); /*debugging*/
-            if (strcmp(cmd[i].opcode, "pall") != 0 && strcmp(cmd[i].opcode, "pint") != 0)
+            if (strcmp(token, cmd[i].opcode) == 0)
             {
-                token = strtok(NULL, " ");
-                glb.arg = token;
+                if (strcmp(cmd[i].opcode, "pall") != 0 && strcmp(cmd[i].opcode, "pint") != 0)
+                {
+                    token = strtok(NULL, " \n\t");
+                    glb.arg = token;
+                }
+                cmd[i].f(&list, glb.line_num);
+                break;
             }
-            cmd[i].f(&list, glb.line_num);
+            i++;
         }
-        else
+        if (i == 3)
         {
             fprintf(stderr, "L%d: unknown instruction %s\n", glb.line_num, cmd[i].opcode);
             exit(EXIT_FAILURE);
         }
-        i++;
-        token = strtok(NULL, " ");
+        token = strtok(NULL, " \n\t");
     }
     return;
 }
