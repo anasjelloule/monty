@@ -25,7 +25,6 @@ void check_valid_opcode(stack_t *list)
             {
                 if (strcmp(cmd[i].opcode, "pall") != 0 || strcmp(cmd[i].opcode, "pint") != 0)
                 {
-                    printf("%s: ",token);
                     token = strtok(NULL, " \n\t");
                     glb.arg = token;
                 }

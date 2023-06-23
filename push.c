@@ -30,6 +30,5 @@ void push(stack_t **stack, unsigned int line_number)
         (*stack)->prev = new;
     }
     *stack = new;
-    printf("add +\n"); /*debugging*/
     return;
 }
