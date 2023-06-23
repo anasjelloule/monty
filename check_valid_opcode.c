@@ -10,6 +10,7 @@ void check_valid_opcode(stack_t *list)
         {"push", push},
         {"pall", pall},
         {"swap", swap},
+        {"pint", pint},
         {NULL, NULL}
     };
     int i;
